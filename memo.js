@@ -1,6 +1,13 @@
 const tipoBomba = 3;
-const iconos = ["bi bi-star-fill","bi bi-balloon-fill","bi bi-dice-3-fill","bi bi-robot"];
+const iconos = ["bi bi-balloon-fill","bi bi-robot","bi bi-lightning-charge-fill","bi bi-x-circle"];
 const colors = ["red","green","blue","black"];
+
+//"bi bi-hand-thumbs-up-fill"
+//"bi bi-star-fill"
+//"bi bi-dice-3-fill"
+
+
+
 
 class Participante{
 	constructor(nombre, equipo){
@@ -89,9 +96,9 @@ function comenzarJuego(){
 		participantes.push(new Participante(nombreRojo,0));
 		participantes.push(new Participante(nombreVerde,1));
 		participantes.push(new Participante(nombreAzul,2));
-		participantes.sort(() => Math.random - 0.5);
-		juegoTerminadoUltimaCarta = false;
-		juegoTerminadoUltimoParticipante = false;
+		participantes.sort(() => Math.random() - 0.5);
+		terminadoPorUltimaCarta = false;
+		terminadoPorUltimoPart = false;
 		createTablero();
 		toast.sendMensajeTurno();
 	}
@@ -109,7 +116,7 @@ function createTablero(){
 						<i class="${iconos[tarjetaTipo]}" style="color:${colors[tarjetaTipo]}"></i>
 					</div>
 					<div class="tarjeta__cara tarjeta__cara--superior">
-						<i class="bi bi-question-diamond-fill"></i>
+						<i class="bi bi-question-circle"></i>
 					</div>
 				</div>
 			</div>
